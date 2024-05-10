@@ -4,12 +4,12 @@
 package com.paymentstrategy;
 
 import com.paymentstrategy.StrategyDP.AccountDetail;
-import com.paymentstrategy.StrategyDP.CreditCartDetaIl;
+import com.paymentstrategy.StrategyDP.CreditCardDetaIl;
 import com.paymentstrategy.StrategyDP.IDetailStrategy;
 import com.paymentstrategy.StrategyDP.IPayStrategy;
-import com.paymentstrategy.StrategyDP.MomoIsPay;
-import com.paymentstrategy.StrategyDP.PaypalIsPay;
-import com.paymentstrategy.StrategyDP.ZaloIsPay;
+import com.paymentstrategy.StrategyDP.CreditCardIsPaid;
+import com.paymentstrategy.StrategyDP.PaypalIsPaid;
+import com.paymentstrategy.StrategyDP.ZaloIsPaid;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -21,7 +21,7 @@ import java.util.Scanner;
 public class PaymentStrategy {
 
     private static Map<Integer, Integer> productList = new HashMap<>();
-    private static ProcessPay procPay = new ProcessPay();
+    private static ProcessPayment procPay = new ProcessPayment();
     private static Scanner scanner = new Scanner(System.in);
 
     //With
@@ -61,25 +61,25 @@ public class PaymentStrategy {
 
         System.out.println("--> Please, select a payment method:" + "\n"
                 + "\t1 - PayPal\n"
-                + "\t2 - Momo Card\n"
-                + "\t3 - ZaloPay Card");
+                + "\t2 - Credit Card\n"
+                + "\t3 - ZaloPay");
         String paymentMethod = scanner.nextLine();
 //            PaypalPayment paypalStrategy = new PayPalPay();
 
         switch (paymentMethod) {
             case "1":
-                procPay.setStrategy(new AccountDetail(), new PaypalIsPay());
+                procPay.setStrategy(new AccountDetail(), new PaypalIsPaid());
                 break;
             case "2":
-                procPay.setStrategy(new CreditCartDetaIl(), new MomoIsPay());
+                procPay.setStrategy(new CreditCardDetaIl(), new CreditCardIsPaid());
                 break;
             case "3":
-                procPay.setStrategy(new AccountDetail(), new ZaloIsPay());
+                procPay.setStrategy(new AccountDetail(), new ZaloIsPaid());
                 break;
         }
-        procPay.getDetail();
+        procPay.getPaymentDetails();
         Thread.sleep(1000);
-        if (procPay.isPay(procPay.getTotalCost())) {
+        if (procPay.isPaid(procPay.getTotalCost())) {
             System.out.println("--> Payment has been successful.");
         } else {
             System.out.println("--> FAIL! Please, check your data.");

@@ -11,14 +11,14 @@ import java.util.Scanner;
  *
  * @author thieu
  */
-public class CreditCartDetaIl implements IDetailStrategy {
+public class CreditCardDetaIl implements IDetailStrategy {
 
     private static Scanner scanner = new Scanner(System.in);
     private CreditCard card;
 
     @Override
-    public void getDetail() {
-        System.out.println("-----Pay with Momo-----");
+    public void getPaymentDetails() {
+        System.out.println("-----Card Information-----");
         System.out.print("Enter the card number: ");
         String number = scanner.nextLine();
         System.out.print("Enter the card expiration date 'mm/yy': ");

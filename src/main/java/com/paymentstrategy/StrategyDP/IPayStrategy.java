@@ -9,6 +9,6 @@ package com.paymentstrategy.StrategyDP;
  * @author ADMIN
  */
 public interface IPayStrategy {
-    boolean isPay(int totalCost);
+    boolean isPaid(int totalCost);
     
 }

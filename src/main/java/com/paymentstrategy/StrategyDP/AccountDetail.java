@@ -16,8 +16,8 @@ public class AccountDetail implements IDetailStrategy {
     private static Scanner scanner = new Scanner(System.in);
 
     @Override
-    public void getDetail() {
-        System.out.println("-----Pay with ZaloPay-----");
+    public void getPaymentDetails() {
+        System.out.println("-----Account Information-----");
         System.out.print("Enter the user's email: ");
         String email = scanner.nextLine();;
         System.out.print("Enter the password: ");

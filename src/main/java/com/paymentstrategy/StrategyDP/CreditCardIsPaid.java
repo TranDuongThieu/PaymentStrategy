@@ -8,11 +8,11 @@ package com.paymentstrategy.StrategyDP;
  *
  * @author thieu
  */
-public class MomoIsPay implements IPayStrategy {
+public class CreditCardIsPaid implements IPayStrategy {
 
     @Override
-    public boolean isPay(int totalCost) {
-        System.out.println("--> Paying " + totalCost + " using Momo.");
+    public boolean isPaid(int totalCost) {
+        System.out.println("--> Paying " + totalCost + " using Credit Cart.");
         return true;
     }
 

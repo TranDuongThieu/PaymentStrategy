@@ -8,11 +8,11 @@ package com.paymentstrategy.StrategyDP;
  *
  * @author thieu
  */
-public class PaypalIsPay implements IPayStrategy {
+public class ZaloIsPaid implements IPayStrategy {
 
     @Override
-    public boolean isPay(int totalCost) {
-        System.out.println("--> Paying " + totalCost + " using Paypal.");
+    public boolean isPaid(int totalCost) {
+        System.out.println("--> Paying " + totalCost + " using Zalo.");
         return true;
     }
 

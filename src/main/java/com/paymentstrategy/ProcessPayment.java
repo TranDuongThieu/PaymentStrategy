@@ -12,22 +12,21 @@ import java.util.Scanner;
  *
  * @author ADMIN
  */
-public class ProcessPay implements IDetailStrategy, IPayStrategy {
-
+public class ProcessPayment implements IDetailStrategy, IPayStrategy {
     private int totalCost = 0;
     private IDetailStrategy _detailStrategy;
     private IPayStrategy _payStrategy;
 
-    public ProcessPay(){};
+    public ProcessPayment(){};
 
     @Override
-    public void getDetail() {
-        _detailStrategy.getDetail();
+    public void getPaymentDetails() {
+        _detailStrategy.getPaymentDetails();
     }
 
     @Override
-    public boolean isPay(int totalCost) {
-        return _payStrategy.isPay(totalCost);
+    public boolean isPaid(int totalCost) {
+        return _payStrategy.isPaid(totalCost);
     }
 
     public void setStrategy(IDetailStrategy _detailStrategy,IPayStrategy _payStrategy){

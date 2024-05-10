@@ -9,5 +9,5 @@ package com.paymentstrategy.StrategyDP;
  * @author thieu
  */
 public interface IDetailStrategy {
-    void getDetail();
+    void getPaymentDetails();
 }
