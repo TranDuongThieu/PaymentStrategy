@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author thieu
  */
-public class CreditCardDetaIl implements IDetailStrategy {
+public class GetCreditCardDetails implements GetPaymentDetailsStrategy {
 
     private static Scanner scanner = new Scanner(System.in);
     private CreditCard card;

@@ -4,14 +4,13 @@
  */
 package com.paymentstrategy.StrategyDP;
 
-import com.paymentstrategy.CreditCard;
 import java.util.Scanner;
 
 /**
  *
  * @author thieu
  */
-public class AccountDetail implements IDetailStrategy {
+public class GetAccountDetails implements GetPaymentDetailsStrategy {
 
     private static Scanner scanner = new Scanner(System.in);
 
