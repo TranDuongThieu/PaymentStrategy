@@ -12,7 +12,6 @@ import java.util.logging.Logger;
  * @author thieu
  */
 public class IsCreditCardPaid implements IsPaidStrategy {
-
     @Override
     public boolean isPaid(int totalCost) {
         try {
@@ -25,5 +24,4 @@ public class IsCreditCardPaid implements IsPaidStrategy {
         }
         return false;
     }
-
 }

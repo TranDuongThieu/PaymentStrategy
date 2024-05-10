@@ -11,7 +11,6 @@ import java.util.Scanner;
  * @author thieu
  */
 public class GetAccountDetails implements GetPaymentDetailsStrategy {
-
     private static Scanner scanner = new Scanner(System.in);
 
     @Override

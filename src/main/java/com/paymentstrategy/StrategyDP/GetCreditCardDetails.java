@@ -28,5 +28,4 @@ public class GetCreditCardDetails implements GetPaymentDetailsStrategy {
         card = new CreditCard(number, date, cvv);
         System.out.print("Validate credit card number...\n\n");
     }
-
 }

@@ -38,5 +38,4 @@ public class ProcessPayment {
     public int getTotalCost() {
         return totalCost;
     }
-
 }

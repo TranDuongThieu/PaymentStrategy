@@ -10,5 +10,4 @@ package com.paymentstrategy.StrategyDP;
  */
 public interface IsPaidStrategy {
     boolean isPaid(int totalCost);
-    
 }
