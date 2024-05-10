@@ -22,10 +22,6 @@ public class ProcessPay implements IDetailStrategy, IPayStrategy {
     private IPayStrategy _payStrategy;
 
     public ProcessPay(){};
-    public ProcessPay(IDetailStrategy detailStrategy, IPayStrategy payStrategy) {
-        this._detailStrategy = detailStrategy;
-        this._payStrategy = payStrategy;
-    }
 
     @Override
     public void getDetail() {
@@ -37,15 +33,12 @@ public class ProcessPay implements IDetailStrategy, IPayStrategy {
         return _payStrategy.isPay(totalCost);
     }
 
-    public void setDetailStrategy(IDetailStrategy _detailStrategy) {
-        this._detailStrategy = _detailStrategy;
+    public void setStrategy(IDetailStrategy _detailStrategy,IPayStrategy _payStrategy){
+         this._detailStrategy = _detailStrategy;
+         this._payStrategy = _payStrategy;
     }
 
-    public void setPayStrategy(IPayStrategy _payStrategy) {
-        this._payStrategy = _payStrategy;
-    }
-    
-    
+
 
     public void setTotalCost(int cost) {
         this.totalCost += cost;
@@ -53,14 +46,6 @@ public class ProcessPay implements IDetailStrategy, IPayStrategy {
 
     public int getTotalCost() {
         return totalCost;
-    }
-
-    public boolean isClosed() {
-        return isClosed;
-    }
-
-    public void setClosed() {
-        isClosed = true;
     }
 
 }
