@@ -4,36 +4,32 @@
  */
 package com.paymentstrategy;
 
-import com.paymentstrategy.StrategyDP.IDetailStrategy;
-import com.paymentstrategy.StrategyDP.IPayStrategy;
-import java.util.Scanner;
+import com.paymentstrategy.StrategyDP.GetPaymentDetailsStrategy;
+import com.paymentstrategy.StrategyDP.IsPaidStrategy;
 
 /**
  *
  * @author ADMIN
  */
-public class ProcessPayment implements IDetailStrategy, IPayStrategy {
+public class ProcessPayment {
     private int totalCost = 0;
-    private IDetailStrategy _detailStrategy;
-    private IPayStrategy _payStrategy;
+    private GetPaymentDetailsStrategy getPaymentDetailsStrategy;
+    private IsPaidStrategy isPaidStrategy;
 
     public ProcessPayment(){};
 
-    @Override
-    public void getPaymentDetails() {
-        _detailStrategy.getPaymentDetails();
+    public void setStrategy(GetPaymentDetailsStrategy getPaymentDetailsStrategy, IsPaidStrategy isPaidStrategy){
+         this.getPaymentDetailsStrategy = getPaymentDetailsStrategy;
+         this.isPaidStrategy = isPaidStrategy;
     }
 
-    @Override
-    public boolean isPaid(int totalCost) {
-        return _payStrategy.isPaid(totalCost);
+    public GetPaymentDetailsStrategy getGetPaymentDetailsStrategy() {
+        return getPaymentDetailsStrategy;
     }
 
-    public void setStrategy(IDetailStrategy _detailStrategy,IPayStrategy _payStrategy){
-         this._detailStrategy = _detailStrategy;
-         this._payStrategy = _payStrategy;
+    public IsPaidStrategy getIsPaidStrategy() {
+        return isPaidStrategy;
     }
-
 
     public void setTotalCost(int cost) {
         this.totalCost += cost;
@@ -42,5 +38,4 @@ public class ProcessPayment implements IDetailStrategy, IPayStrategy {
     public int getTotalCost() {
         return totalCost;
     }
-
 }

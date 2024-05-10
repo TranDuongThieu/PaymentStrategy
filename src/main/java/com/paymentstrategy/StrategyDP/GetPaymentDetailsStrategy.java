@@ -8,6 +8,6 @@ package com.paymentstrategy.StrategyDP;
  *
  * @author thieu
  */
-public interface IDetailStrategy {
+public interface GetPaymentDetailsStrategy {
     void getPaymentDetails();
 }

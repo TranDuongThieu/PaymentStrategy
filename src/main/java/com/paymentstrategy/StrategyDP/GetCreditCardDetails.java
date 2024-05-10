@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author thieu
  */
-public class CreditCardDetaIl implements IDetailStrategy {
+public class GetCreditCardDetails implements GetPaymentDetailsStrategy {
 
     private static Scanner scanner = new Scanner(System.in);
     private CreditCard card;
@@ -28,5 +28,4 @@ public class CreditCardDetaIl implements IDetailStrategy {
         card = new CreditCard(number, date, cvv);
         System.out.print("Validate credit card number...\n\n");
     }
-
 }
