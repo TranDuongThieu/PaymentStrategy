@@ -15,9 +15,6 @@ import java.util.Scanner;
 public class ProcessPay implements IDetailStrategy, IPayStrategy {
 
     private int totalCost = 0;
-    private boolean isClosed = false;
-    private CreditCard card;
-    private static Scanner scanner = new Scanner(System.in);
     private IDetailStrategy _detailStrategy;
     private IPayStrategy _payStrategy;
 
@@ -37,7 +34,6 @@ public class ProcessPay implements IDetailStrategy, IPayStrategy {
          this._detailStrategy = _detailStrategy;
          this._payStrategy = _payStrategy;
     }
-
 
 
     public void setTotalCost(int cost) {
